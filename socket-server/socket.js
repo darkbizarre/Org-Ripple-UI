@@ -32,6 +32,7 @@ io.on('connection', function (socket) {
 
         if (usersList[user.username]) {
             usersList[user.username].sid.push(socket.id);
+            usersList[user.username].role = user.role
         } else {
             usersList[user.username] = new User(user, socket.id);
         }
